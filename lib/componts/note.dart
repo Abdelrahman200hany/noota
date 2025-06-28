@@ -12,12 +12,12 @@ final Color color;
         color:color,
         border: Border.all(color: Colors.black),
       ),
-      padding: EdgeInsets.only(top: 10, left: 10, bottom: 10),
+      padding:const  EdgeInsets.only(top: 10, left: 10, bottom: 10),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.end,
         children:  [
           ListTile(
-            title: Padding(
+            title:const  Padding(
               padding: EdgeInsets.only(bottom: 10),
               child: Text(
                 'noteone ',
@@ -29,7 +29,7 @@ final Color color;
               ),
             ),
             
-            subtitle: Text(
+            subtitle:const  Text(
               'this is the frist node i have do so i want to write more ',
               style: TextStyle(
                 fontSize: 18,
@@ -39,10 +39,10 @@ final Color color;
             ),
             trailing: IconButton(
          onPressed: () {},
-              icon: Icon(Icons.delete, color: Colors.black),
+              icon: const Icon(Icons.delete, color: Colors.black),
             ),
           ),
-          Padding(
+        const   Padding(
             padding: EdgeInsets.only(
               right: 20,
               top: 20,
