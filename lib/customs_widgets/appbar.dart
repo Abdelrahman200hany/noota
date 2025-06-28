@@ -7,21 +7,20 @@ class CustomAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-        body: Row(
+    return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
+      children:const   [
         Text(
           'Noota ',
-          style: TextStyle(
+          style:  TextStyle(
             fontSize: 30,
-            fontFamily: '',
+            // fontFamily: '',
             fontWeight: FontWeight.w500,
-            color: Kprimarycolor,
+            color: Colors.white,
           ),
         ),
         IconsSearch(),
       ],
-    ));
+    );
   }
 }
