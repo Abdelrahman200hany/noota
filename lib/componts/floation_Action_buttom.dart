@@ -12,6 +12,9 @@ class floatingButtom extends StatelessWidget {
     return FloatingActionButton(
       onPressed: () {
         showModalBottomSheet(
+          shape:RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12),
+          ),
             context: context,
             builder: (context) {
               return const AddModelbottomsheet();
