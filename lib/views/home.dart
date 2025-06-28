@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:noota/componts/floation_Action_buttom.dart';
+import 'package:noota/const_value/consts.dart';
 
 import 'package:noota/customs_widgets/Note_list.dart';
 import 'package:noota/customs_widgets/appbar.dart';
@@ -10,15 +12,19 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: floatingButtom(),
       body: Padding(
         padding: EdgeInsets.all(12).copyWith(top: 5),
         child: Column(
-          children:   [
-           CustomAppBar(),
-           Notelist(),
+          children: [
+            CustomAppBar(),
+            Notelist(),
           ],
         ),
       ),
     );
   }
 }
+
+
+
