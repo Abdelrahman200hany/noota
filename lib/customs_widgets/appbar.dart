@@ -1,0 +1,27 @@
+import 'package:flutter/material.dart';
+import 'package:noota/componts/icons_search.dart';
+import 'package:noota/const_value/consts.dart';
+
+class CustomAppBar extends StatelessWidget {
+  const CustomAppBar({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Scaffold(
+        body: Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Text(
+          'Noota ',
+          style: TextStyle(
+            fontSize: 30,
+            fontFamily: '',
+            fontWeight: FontWeight.w500,
+            color: Kprimarycolor,
+          ),
+        ),
+        IconsSearch(),
+      ],
+    ));
+  }
+}
