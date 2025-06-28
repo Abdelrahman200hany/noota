@@ -11,9 +11,11 @@ class AddModelbottomsheet extends StatelessWidget {
       
       children:  [
          CostomTextField(
+        
           hint: 'title ',
         ),
         CostomTextField(
+            maxlines: 4,
           hint: 'sub title ',
         ),
         Spacer(),

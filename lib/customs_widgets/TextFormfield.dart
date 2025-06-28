@@ -5,9 +5,11 @@ class CostomTextField extends StatelessWidget {
   const CostomTextField({
     super.key,
     required this.hint,
+    this.maxlines=1,
     @required this.onchange,
   });
   final String hint;
+  final int maxlines;
 
   final Function(String data)? onchange;
 
@@ -16,26 +18,30 @@ class CostomTextField extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.all(20).copyWith(bottom: 20),
       child: TextFormField(
-        style: TextStyle(
+        maxLines:maxlines ,
+        cursorColor: Kprimarycolor,
+        style:const  TextStyle(
           color: Colors.white,
         ),
         onChanged: (data) {},
         decoration: InputDecoration(
           hintText: hint,
           hintStyle: TextStyle(color: Colors.white),
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(12),
-          ),
-          enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(12),
-            borderSide: BorderSide(color: Colors.white),
-          ),
+          enabledBorder: BuildBorder(),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(12),
-            borderSide: BorderSide(color: const Color.fromARGB(255, 167, 203, 240)),
+            borderSide:
+                BorderSide(color: const Color.fromARGB(255, 167, 203, 240)),
           ),
         ),
       ),
+    );
+  }
+
+  OutlineInputBorder BuildBorder() {
+    return OutlineInputBorder(
+      borderRadius: BorderRadius.circular(12),
+      borderSide: const BorderSide(color: Colors.white),
     );
   }
 }
