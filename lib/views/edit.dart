@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:noota/customs_widgets/TextFormfield.dart';
+import 'package:noota/customs_widgets/appbar.dart';
 
 class EditView extends StatelessWidget {
   const EditView({super.key});
+  static String id = 'EditView';
 
   @override
   Widget build(BuildContext context) {
@@ -9,7 +12,16 @@ class EditView extends StatelessWidget {
       body: Padding(
         padding: EdgeInsets.all(10).copyWith(top: 10),
         child: Column(
-          children: [],
+          children: [
+            const CustomAppBar(text: 'Edit', icon: Icons.check),
+            CostomTextField(
+              hint: 'title',
+            ),
+            CostomTextField(
+              hint: 'content',
+              maxlines: 4,
+            ),
+          ],
         ),
       ),
     );

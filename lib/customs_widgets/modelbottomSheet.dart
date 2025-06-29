@@ -7,18 +7,16 @@ class AddModelbottomsheet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const  Column(
-      
-      children:  [
-         CostomTextField(
-        
+    return ListView(
+      children: const [
+        CostomTextField(
           hint: 'title ',
         ),
         CostomTextField(
-            maxlines: 4,
+          maxlines: 4,
           hint: 'sub title ',
         ),
-        Spacer(),
+        SizedBox(height: 150),
         CostomButtom(text: 'Add Node'),
       ],
     );

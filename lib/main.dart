@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:noota/views/edit.dart';
 import 'package:noota/views/home.dart';
 
 void main() {
@@ -17,6 +18,7 @@ class NoteApp extends StatelessWidget {
       ),
       routes: {
         HomeView.id: (context) => const HomeView(),
+        EditView.id: (context) => const EditView(),
       },
       initialRoute: HomeView.id,
     );
