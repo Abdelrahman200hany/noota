@@ -17,7 +17,10 @@ class HomeView extends StatelessWidget {
         padding: EdgeInsets.all(12).copyWith(top: 5),
         child: Column(
           children: [
-            CustomAppBar(),
+            CustomAppBar(
+              text: 'noota',
+              icon: Icons.search,
+            ),
             Notelist(),
           ],
         ),
@@ -25,6 +28,3 @@ class HomeView extends StatelessWidget {
     );
   }
 }
-
-
-
