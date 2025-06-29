@@ -10,10 +10,10 @@ class EditView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: EdgeInsets.all(10).copyWith(top: 10),
-        child: Column(
-          children: [
-            const CustomAppBar(text: 'Edit', icon: Icons.check),
+        padding:const  EdgeInsets.all(12).copyWith(top: 5),
+        child:  Column(
+          children: const[
+             CustomAppBar(text: 'Edit', icon: Icons.check),
             CostomTextField(
               hint: 'title',
             ),
