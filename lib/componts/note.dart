@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:noota/const_value/consts.dart';
+
 import 'package:noota/views/edit.dart';
 
 class Note extends StatelessWidget {
