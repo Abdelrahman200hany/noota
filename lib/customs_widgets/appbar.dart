@@ -20,7 +20,7 @@ class CustomAppBar extends StatelessWidget {
             color: Colors.white,
           ),
         ),
-        IconsSearch(icon: icon),
+        IconsCompont(icon: icon),
       ],
     );
   }

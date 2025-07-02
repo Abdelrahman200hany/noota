@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class IconsSearch extends StatelessWidget {
-  const IconsSearch({super.key, required this.icon});
+class IconsCompont extends StatelessWidget {
+  const IconsCompont({super.key, required this.icon});
   final IconData icon;
 
   @override

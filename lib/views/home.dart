@@ -10,18 +10,20 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      floatingActionButton: floatingButtom(),
-      body: Padding(
-        padding: EdgeInsets.all(12).copyWith(top: 5),
-        child: Column(
-          children: [
-            CustomAppBar(
-              text: 'noota',
-              icon: Icons.search,
-            ),
-            Notelist(),
-          ],
+    return SafeArea(
+      child: Scaffold(
+        floatingActionButton: floatingButtom(),
+        body: Padding(
+          padding: EdgeInsets.all(12).copyWith(top: 5),
+          child: Column(
+            children: [
+              CustomAppBar(
+                text: 'noota',
+                icon: Icons.search,
+              ),
+              Notelist(),
+            ],
+          ),
         ),
       ),
     );

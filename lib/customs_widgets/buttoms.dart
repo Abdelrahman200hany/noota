@@ -2,15 +2,16 @@ import 'package:flutter/material.dart';
 
 class CostomButtom extends StatelessWidget {
   const CostomButtom({
+    required this.ontap,
     super.key,
     required this.text,
   });
   final String text;
-  // final VoidCallback? ontap;
+  final VoidCallback? ontap;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: ontap,
       child: Padding(
         padding: const EdgeInsets.all(16).copyWith(bottom: 40),
         child: Container(

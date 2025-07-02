@@ -7,18 +7,52 @@ class AddModelbottomsheet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      children: const [
-        CostomTextField(
-          hint: 'title ',
-        ),
-        CostomTextField(
-          maxlines: 4,
-          hint: 'sub title ',
-        ),
-        SizedBox(height: 150),
-        CostomButtom(text: 'Add Node'),
-      ],
+    return MyField();
+  }
+}
+
+class MyField extends StatefulWidget {
+  const MyField({
+    super.key,
+  });
+
+  @override
+  State<MyField> createState() => _MyFieldState();
+}
+
+class _MyFieldState extends State<MyField> {
+  String? title, content;
+  GlobalKey<FormState> formKey = GlobalKey();
+
+  @override
+  Widget build(BuildContext context) {
+    return Form(
+      key: formKey,
+      child: ListView(
+        children: [
+          CostomTextField(
+            onSaved: (data) {
+              title = data;
+            },
+            maxlines: 2,
+            hint: 'title ',
+          ),
+          CostomTextField(
+            onSaved: (data) {
+              content = data;
+            },
+            maxlines: 5,
+            hint: 'sub title ',
+          ),
+          SizedBox(height: 100),
+          CostomButtom(
+            text: 'Add Node',
+            ontap: () {
+              if (formKey.currentState!.validate()) {}
+            },
+          ),
+        ],
+      ),
     );
   }
 }
