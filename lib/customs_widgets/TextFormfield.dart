@@ -32,9 +32,9 @@ class CostomTextField extends StatelessWidget {
         decoration: InputDecoration(
           hintText: hint,
           hintStyle: TextStyle(color: const Color.fromARGB(255, 185, 157, 157)),
-          border: BuildBorder(Colors.white),
-          enabledBorder: BuildBorder(const Color.fromARGB(255, 231, 213, 213)),
-          focusedBorder: BuildBorder(const Color.fromARGB(255, 160, 90, 68)),
+          border: BuildBorder(Color.fromARGB(255, 245, 145, 63)),
+          enabledBorder: BuildBorder(const Color.fromARGB(255, 210, 216, 221)),
+          focusedBorder: BuildBorder( const Color.fromARGB(255, 233, 210, 210)),
         ),
       ),
     );
