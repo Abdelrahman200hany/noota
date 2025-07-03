@@ -23,6 +23,7 @@ class MyField extends StatefulWidget {
 class _MyFieldState extends State<MyField> {
   String? title, content;
   GlobalKey<FormState> formKey = GlobalKey();
+  AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +49,12 @@ class _MyFieldState extends State<MyField> {
           CostomButtom(
             text: 'Add Node',
             ontap: () {
-              if (formKey.currentState!.validate()) {}
+              if (formKey.currentState!.validate()) {
+                formKey.currentState!.save();
+              } else {
+                autovalidateMode = AutovalidateMode.always;
+                setState(() {});
+              }
             },
           ),
         ],

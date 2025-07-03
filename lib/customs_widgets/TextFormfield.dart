@@ -19,7 +19,7 @@ class CostomTextField extends StatelessWidget {
       padding: EdgeInsets.all(20).copyWith(bottom: 20),
       child: TextFormField(
         validator: (data) {
-          if (data != null) {
+          if (data?.isEmpty ?? true) {
             return ('filed is requried');
           }
         },
@@ -34,7 +34,7 @@ class CostomTextField extends StatelessWidget {
           hintStyle: TextStyle(color: const Color.fromARGB(255, 185, 157, 157)),
           border: BuildBorder(Color.fromARGB(255, 245, 145, 63)),
           enabledBorder: BuildBorder(const Color.fromARGB(255, 210, 216, 221)),
-          focusedBorder: BuildBorder( const Color.fromARGB(255, 233, 210, 210)),
+          focusedBorder: BuildBorder(const Color.fromARGB(255, 233, 210, 210)),
         ),
       ),
     );
