@@ -16,7 +16,7 @@ class CostomTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(20).copyWith(bottom: 20),
+      padding:const  EdgeInsets.all(20).copyWith(bottom: 20),
       child: TextFormField(
         validator: (data) {
           if (data?.isEmpty ?? true) {
@@ -25,22 +25,22 @@ class CostomTextField extends StatelessWidget {
         },
         onSaved: onSaved,
         maxLines: maxlines,
-        cursorColor: Kprimarycolor,
+        cursorColor: kprimarycolor,
         style: const TextStyle(
           color: Colors.white,
         ),
         decoration: InputDecoration(
           hintText: hint,
-          hintStyle: TextStyle(color: const Color.fromARGB(255, 185, 157, 157)),
-          border: BuildBorder(Color.fromARGB(255, 245, 145, 63)),
-          enabledBorder: BuildBorder(const Color.fromARGB(255, 210, 216, 221)),
-          focusedBorder: BuildBorder(const Color.fromARGB(255, 233, 210, 210)),
+          hintStyle:const TextStyle(color: const Color.fromARGB(255, 185, 157, 157)),
+          border: buildBorder(const Color.fromARGB(255, 245, 145, 63)),
+          enabledBorder: buildBorder(const Color.fromARGB(255, 210, 216, 221)),
+          focusedBorder: buildBorder(const Color.fromARGB(255, 233, 210, 210)),
         ),
       ),
     );
   }
 
-  OutlineInputBorder BuildBorder(Color color) {
+  OutlineInputBorder buildBorder(Color color) {
     return OutlineInputBorder(
       borderRadius: BorderRadius.circular(12),
       borderSide: BorderSide(color: color),

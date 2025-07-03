@@ -12,10 +12,10 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        floatingActionButton: floatingButtom(),
+        floatingActionButton: const FloatingButtom(),
         body: Padding(
-          padding: EdgeInsets.all(12).copyWith(top: 5),
-          child: Column(
+          padding: const EdgeInsets.all(12).copyWith(top: 5),
+          child:const  Column(
             children: [
               CustomAppBar(
                 text: 'noota',

@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:noota/const_value/consts.dart';
 import 'package:noota/customs_widgets/modelbottomSheet.dart';
 
-class floatingButtom extends StatelessWidget {
-  const floatingButtom({
+class FloatingButtom extends StatelessWidget {
+  const FloatingButtom({
     super.key,
   });
 
@@ -20,7 +20,7 @@ class floatingButtom extends StatelessWidget {
               return const AddModelbottomsheet();
             });
       },
-      backgroundColor: Kprimarycolor,
+      backgroundColor: kprimarycolor,
       child: const Icon(
         Icons.add,
         color: Colors.white,
