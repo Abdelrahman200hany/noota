@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:noota/const_value/consts.dart';
+import 'package:noota/models/note_model.dart';
 import 'package:noota/views/edit.dart';
 import 'package:noota/views/home.dart';
 import 'package:noota/views/splash.dart';
 
 void main() async {
   await Hive.initFlutter();
-
-  await Hive.openBox(notebox);
+  await Hive.openBox(knotebox);
+  Hive.registerAdapter(NoteModelAdapter());
   runApp(const NoteApp());
 }
 
