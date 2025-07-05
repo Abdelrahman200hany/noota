@@ -1,3 +1,4 @@
+
 import 'package:hive/hive.dart';
 part 'note_model.g.dart';
 
@@ -8,6 +9,6 @@ class NoteModel extends HiveObject {
   @HiveField(1)
   final String subtitle;
   @HiveField(2)
-  final DateTime date;
-  NoteModel({required this.date, required this.title, required this.subtitle});
+  final String  date;
+  NoteModel({ this.date='30/may 2002', required this.title, required this.subtitle});
 }
