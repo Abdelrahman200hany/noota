@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:noota/const_value/consts.dart';
-import 'package:noota/methods/bloc_observe.dart';
+import 'package:noota/servies/bloc_observe.dart';
 import 'package:noota/models/note_model.dart';
 import 'package:noota/views/edit.dart';
 import 'package:noota/views/home.dart';
