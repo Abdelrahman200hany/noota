@@ -10,5 +10,5 @@ class NoteModel extends HiveObject {
   final String subtitle;
   @HiveField(2)
   final String  date;
-  NoteModel({ this.date='30/may 2002', required this.title, required this.subtitle});
+  NoteModel({required this.date, required this.title, required this.subtitle});
 }

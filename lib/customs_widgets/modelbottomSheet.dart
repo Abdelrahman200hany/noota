@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:noota/cubits/add_note_cubit/add_node.dart';
 import 'package:noota/cubits/add_note_cubit/add_state.dart';
 import 'package:noota/customs_widgets/TextFormfield.dart';
@@ -20,13 +19,14 @@ class AddModelbottomsheet extends StatelessWidget {
             print('error message ');
           }
           if (state is AddNoteSucess) {
-               print('success ');
+            print('success ');
             Navigator.pop(context);
-               
           }
         },
         builder: (context, state) {
-          return  const AddNoteForm();
+          return AbsorbPointer(
+              absorbing: state is AddNoteloading ? true : false,
+              child: const AddNoteForm());
         },
       ),
     );
@@ -74,12 +74,16 @@ class _MyFieldState extends State<AddNoteForm> {
             BlocBuilder<AddNoteCubit, AddNoteState>(
               builder: (context, state) {
                 return CostomButtom(
+                  isloading: state is AddNoteloading ? true : false,
                   text: 'Add Node',
                   ontap: () {
                     if (formKey.currentState!.validate()) {
                       formKey.currentState!.save();
-                      NoteModel note =
-                          NoteModel(subtitle: content!, title: title!);
+                      NoteModel note = NoteModel(
+                        subtitle: content!,
+                        title: title!,
+                        date: DateTime.now().toString(),
+                      );
                       BlocProvider.of<AddNoteCubit>(context).addNote(note);
                     } else {
                       autovalidateMode = AutovalidateMode.always;

@@ -9,7 +9,6 @@ import 'package:noota/views/home.dart';
 import 'package:noota/views/splash.dart';
 
 void main() async {
-  
   await Hive.initFlutter();
   Bloc.observer = SimpleBlocObserver();
   Hive.registerAdapter(NoteModelAdapter());
