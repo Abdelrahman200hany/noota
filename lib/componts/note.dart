@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:noota/cubits/notes_cubit/Get_notes_cubit.dart';
+import 'package:noota/cubits/notes_cubit/notes_stata.dart';
+import 'package:noota/models/note_model.dart';
 
 import 'package:noota/views/edit.dart';
 
 class Note extends StatelessWidget {
-  const Note({super.key, required this.color});
+  const Note({super.key, required this.color, required this.note});
+  final NoteModel note;
   final Color color;
   @override
   Widget build(BuildContext context) {
@@ -22,38 +27,41 @@ class Note extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             ListTile(
-              title: const Padding(
+              title: Padding(
                 padding: EdgeInsets.only(bottom: 10),
                 child: Text(
-                  'noteone ',
-                  style: TextStyle(
+                  note.title,
+                  style: const TextStyle(
                     fontSize: 30,
                     fontWeight: FontWeight.w500,
                     color: Colors.black,
                   ),
                 ),
               ),
-              subtitle: const Text(
-                'this is the frist node i have do so i want to write more ',
-                style: TextStyle(
+              subtitle: Text(
+                note.subtitle,
+                style: const TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.w300,
                   color: Colors.black,
                 ),
               ),
               trailing: IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  note.delete();
+                  BlocProvider.of<NotesCubit>(context).nodes;
+                },
                 icon: const Icon(Icons.delete, color: Colors.black),
               ),
             ),
-            const Padding(
-              padding: EdgeInsets.only(
+            Padding(
+              padding:const  EdgeInsets.only(
                 right: 20,
                 top: 20,
               ),
               child: Text(
-                'may 23 / 10',
-                style: TextStyle(
+                note.date,
+                style:const  TextStyle(
                     color: Colors.black,
                     fontSize: 18,
                     fontWeight: FontWeight.w400),

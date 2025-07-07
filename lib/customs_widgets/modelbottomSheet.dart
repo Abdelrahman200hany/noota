@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:noota/cubits/add_note_cubit/add_node.dart';
 import 'package:noota/cubits/add_note_cubit/add_state.dart';
+import 'package:noota/cubits/notes_cubit/Get_notes_cubit.dart';
 import 'package:noota/customs_widgets/add_note_form.dart';
 
 class AddModelbottomsheet extends StatelessWidget {
@@ -17,7 +18,7 @@ class AddModelbottomsheet extends StatelessWidget {
             print('error message ');
           }
           if (state is AddNoteSucess) {
-            print('success ');
+            BlocProvider.of<NotesCubit>(context).nodes;
             Navigator.pop(context);
           }
         },
