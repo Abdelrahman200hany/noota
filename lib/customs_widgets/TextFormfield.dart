@@ -6,23 +6,25 @@ class CostomTextField extends StatelessWidget {
     super.key,
     required this.hint,
     this.maxlines = 1,
-    required this.onSaved,
+    this.onSaved,
+    this.onChanged,
   });
   final String hint;
   final int maxlines;
 
   final Function(String?)? onSaved;
-
+  final void Function(String)? onChanged;
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding:const  EdgeInsets.all(20).copyWith(bottom: 20),
+      padding: const EdgeInsets.all(20).copyWith(bottom: 20),
       child: TextFormField(
         validator: (data) {
           if (data?.isEmpty ?? true) {
             return ('filed is requried');
           }
         },
+        onChanged: onChanged,
         onSaved: onSaved,
         maxLines: maxlines,
         cursorColor: kprimarycolor,
@@ -31,7 +33,8 @@ class CostomTextField extends StatelessWidget {
         ),
         decoration: InputDecoration(
           hintText: hint,
-          hintStyle:const TextStyle(color: const Color.fromARGB(255, 185, 157, 157)),
+          hintStyle:
+              const TextStyle(color:  const Color.fromARGB(255, 185, 157, 157)),
           border: buildBorder(const Color.fromARGB(255, 245, 145, 63)),
           enabledBorder: buildBorder(const Color.fromARGB(255, 210, 216, 221)),
           focusedBorder: buildBorder(const Color.fromARGB(255, 233, 210, 210)),

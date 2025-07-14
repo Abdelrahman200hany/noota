@@ -18,7 +18,9 @@ class FloatingButtom extends StatelessWidget {
             ),
             context: context,
             builder: (context) {
-              return const AddModelbottomsheet();
+              return Padding(
+                  padding: EdgeInsets.only(top: 12),
+                  child: const AddModelbottomsheet());
             });
       },
       backgroundColor: kprimarycolor,

@@ -28,46 +28,48 @@ class _MyFieldState extends State<AddNoteForm> {
       child: Padding(
         padding:
             EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
-        child: ListView(
-          children: [
-            CostomTextField(
-              onSaved: (data) {
-                title = data;
-              },
-              maxlines: 2,
-              hint: 'title ',
-            ),
-            CostomTextField(
-              onSaved: (data) {
-                content = data;
-              },
-              maxlines: 5,
-              hint: 'sub title ',
-            ),
-            const SizedBox(height: 100),
-            BlocBuilder<AddNoteCubit, AddNoteState>(
-              builder: (context, state) {
-                return CostomButtom(
-                  isloading: state is AddNoteloading ? true : false,
-                  text: 'Add Node',
-                  ontap: () {
-                    if (formKey.currentState!.validate()) {
-                      formKey.currentState!.save();
-                      NoteModel note = NoteModel(
-                        subtitle: content!,
-                        title: title!,
-                        date: DateTime.now().year.toString(),
-                      );
-                      BlocProvider.of<AddNoteCubit>(context).addNote(note);
-                    } else {
-                      autovalidateMode = AutovalidateMode.always;
-                      setState(() {});
-                    }
-                  },
-                );
-              },
-            ),
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              CostomTextField(
+                onSaved: (data) {
+                  title = data;
+                },
+                maxlines: 2,
+                hint: 'title ',
+              ),
+              CostomTextField(
+                onSaved: (data) {
+                  content = data;
+                },
+                maxlines: 5,
+                hint: 'sub title ',
+              ),
+              const SizedBox(height: 60),
+              BlocBuilder<AddNoteCubit, AddNoteState>(
+                builder: (context, state) {
+                  return CostomButtom(
+                    isloading: state is AddNoteloading ? true : false,
+                    text: 'Add Node',
+                    ontap: () {
+                      if (formKey.currentState!.validate()) {
+                        formKey.currentState!.save();
+                        NoteModel note = NoteModel(
+                          subtitle: content!,
+                          title: title!,
+                          date: DateTime.now().year.toString(),
+                        );
+                        BlocProvider.of<AddNoteCubit>(context).addNote(note);
+                      } else {
+                        autovalidateMode = AutovalidateMode.always;
+                        setState(() {});
+                      }
+                    },
+                  );
+                },
+              ),
+            ],
+          ),
         ),
       ),
     );

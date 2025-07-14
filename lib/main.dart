@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:noota/const_value/consts.dart';
+import 'package:noota/cubits/notes_cubit/Get_notes_cubit.dart';
 import 'package:noota/servies/bloc_observe.dart';
 import 'package:noota/models/note_model.dart';
 import 'package:noota/views/edit.dart';
@@ -21,17 +22,20 @@ class NoteApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        brightness: Brightness.dark,
+    return BlocProvider(
+      create: (context) => NotesCubit(),
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          brightness: Brightness.dark,
+        ),
+        routes: {
+          HomeView.id: (context) => const HomeView(),
+          EditView.id: (context) => const EditView(),
+          SplashView.id: (context) => const SplashView(),
+        },
+        initialRoute: SplashView.id,
       ),
-      routes: {
-        HomeView.id: (context) => const HomeView(),
-        EditView.id: (context) => const EditView(),
-        SplashView.id: (context) => const SplashView(),
-      },
-      initialRoute: SplashView.id,
     );
   }
 }

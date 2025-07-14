@@ -5,19 +5,8 @@ import 'package:noota/cubits/notes_cubit/Get_notes_cubit.dart';
 import 'package:noota/cubits/notes_cubit/notes_stata.dart';
 import 'package:noota/models/note_model.dart';
 
-class Notelist extends StatefulWidget {
+class Notelist extends StatelessWidget {
   const Notelist({super.key});
-
-  @override
-  State<Notelist> createState() => _NotelistState();
-}
-
-class _NotelistState extends State<Notelist> {
-  @override
-  void initState() {
-    super.initState();
-    BlocProvider.of<NotesCubit>(context).fetchAllNotes();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +22,7 @@ class _NotelistState extends State<Notelist> {
                 padding: const EdgeInsets.only(bottom: 10),
                 child: Note(
                   note: notes[index],
-                  color: Color(0xff992266 * (index + 1)),
+                  color: Color(0xff569735 * (index + 1)),
                 ),
               ),
               itemCount: notes.length,

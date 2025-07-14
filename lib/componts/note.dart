@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:noota/cubits/notes_cubit/Get_notes_cubit.dart';
-import 'package:noota/cubits/notes_cubit/notes_stata.dart';
+
 import 'package:noota/models/note_model.dart';
 
 import 'package:noota/views/edit.dart';
@@ -14,7 +14,7 @@ class Note extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.pushNamed(context, EditView.id);
+        Navigator.pushNamed(context, EditView.id, arguments: note);
       },
       child: Container(
         decoration: BoxDecoration(
@@ -28,7 +28,7 @@ class Note extends StatelessWidget {
           children: [
             ListTile(
               title: Padding(
-                padding: EdgeInsets.only(bottom: 10),
+                padding: const EdgeInsets.only(bottom: 10),
                 child: Text(
                   note.title,
                   style: const TextStyle(
@@ -49,19 +49,19 @@ class Note extends StatelessWidget {
               trailing: IconButton(
                 onPressed: () {
                   note.delete();
-                  BlocProvider.of<NotesCubit>(context).nodes;
+                  BlocProvider.of<NotesCubit>(context).fetchAllNotes();
                 },
                 icon: const Icon(Icons.delete, color: Colors.black),
               ),
             ),
             Padding(
-              padding:const  EdgeInsets.only(
+              padding: const EdgeInsets.only(
                 right: 20,
                 top: 20,
               ),
               child: Text(
                 note.date,
-                style:const  TextStyle(
+                style: const TextStyle(
                     color: Colors.black,
                     fontSize: 18,
                     fontWeight: FontWeight.w400),

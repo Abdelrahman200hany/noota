@@ -15,10 +15,10 @@ class AddModelbottomsheet extends StatelessWidget {
       child: BlocConsumer<AddNoteCubit, AddNoteState>(
         listener: (context, state) {
           if (state is AddNoteFailuer) {
-            print('error message ');
+            debugPrint('error ');
           }
           if (state is AddNoteSucess) {
-            BlocProvider.of<NotesCubit>(context).nodes;
+            BlocProvider.of<NotesCubit>(context).fetchAllNotes();
             Navigator.pop(context);
           }
         },
