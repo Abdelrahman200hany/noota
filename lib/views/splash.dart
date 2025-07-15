@@ -14,10 +14,8 @@ class _SplashViewState extends State<SplashView> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(
-      const Duration(seconds: 6),
-      () => Navigator.pushReplacementNamed(context, HomeView.id),
-    );
+    Future.delayed(const Duration(seconds: 6),
+        () => Navigator.pushReplacementNamed(context, HomeView.id));
   }
 
   @override
@@ -25,7 +23,7 @@ class _SplashViewState extends State<SplashView> {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Center(
-        child: Container(
+        child: SizedBox(
           width: MediaQuery.of(context).size.width * 0.4,
           height: MediaQuery.of(context).size.height * 0.4,
           child: Lottie.asset('assets/lottie_animation/noota.json'),
