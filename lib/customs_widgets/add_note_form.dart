@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
@@ -6,6 +5,7 @@ import 'package:noota/cubits/add_note_cubit/add_node.dart';
 import 'package:noota/cubits/add_note_cubit/add_state.dart';
 import 'package:noota/customs_widgets/TextFormfield.dart';
 import 'package:noota/customs_widgets/buttoms.dart';
+import 'package:noota/customs_widgets/circle_color_list.dart';
 import 'package:noota/models/note_model.dart';
 
 class AddNoteForm extends StatefulWidget {
@@ -46,7 +46,9 @@ class _MyFieldState extends State<AddNoteForm> {
                 maxlines: 5,
                 hint: 'sub title ',
               ),
-              const SizedBox(height: 60),
+              const SizedBox(height: 10),
+            const   CircleColorList(),
+              const SizedBox(height: 10),
               BlocBuilder<AddNoteCubit, AddNoteState>(
                 builder: (context, state) {
                   return CostomButtom(
@@ -55,12 +57,13 @@ class _MyFieldState extends State<AddNoteForm> {
                     ontap: () {
                       if (formKey.currentState!.validate()) {
                         formKey.currentState!.save();
-                      var currentDate=DateTime.now();
-                      var formattedCurrentDate=DateFormat('dd/mm/yyyy').format(currentDate);
+                        var currentDate = DateTime.now();
+                        var formattedCurrentDate =
+                            DateFormat('dd/mm/yyyy').format(currentDate);
                         NoteModel note = NoteModel(
                           subtitle: content!,
                           title: title!,
-                          date:formattedCurrentDate,
+                          date: formattedCurrentDate,
                         );
                         BlocProvider.of<AddNoteCubit>(context).addNote(note);
                       } else {

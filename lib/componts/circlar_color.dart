@@ -1,16 +1,23 @@
 import 'package:flutter/material.dart';
 
-class CirclarColorAvatar extends StatelessWidget {
-  const CirclarColorAvatar({super.key, required this.color});
+class ColorItem extends StatelessWidget {
+  const ColorItem({super.key, required this.color, required this.isclicked});
   final Color color;
+  final bool isclicked;
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {},
-      child: CircleAvatar(
-        radius: 13,
-        backgroundColor: color,
-      ),
-    );
+    return isclicked
+        ? CircleAvatar(
+            backgroundColor: Colors.white,
+            radius: 19,
+            child: CircleAvatar(
+              radius: 17,
+              backgroundColor: color,
+            ),
+          )
+        : CircleAvatar(
+            radius: 17,
+            backgroundColor: color,
+          );
   }
 }
