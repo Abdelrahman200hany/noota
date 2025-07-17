@@ -33,8 +33,7 @@ class CostomTextField extends StatelessWidget {
         ),
         decoration: InputDecoration(
           hintText: hint,
-          hintStyle:
-              const TextStyle(color:  const Color.fromARGB(255, 185, 157, 157)),
+          hintStyle: const TextStyle(color: Color.fromARGB(255, 185, 157, 157)),
           border: buildBorder(const Color.fromARGB(255, 245, 145, 63)),
           enabledBorder: buildBorder(const Color.fromARGB(255, 210, 216, 221)),
           focusedBorder: buildBorder(const Color.fromARGB(255, 233, 210, 210)),
@@ -50,3 +49,5 @@ class CostomTextField extends StatelessWidget {
     );
   }
 }
+
+

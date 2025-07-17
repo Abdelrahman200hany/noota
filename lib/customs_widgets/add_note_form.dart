@@ -5,7 +5,6 @@ import 'package:noota/cubits/add_note_cubit/add_node.dart';
 import 'package:noota/cubits/add_note_cubit/add_state.dart';
 import 'package:noota/customs_widgets/TextFormfield.dart';
 import 'package:noota/customs_widgets/buttoms.dart';
-import 'package:noota/customs_widgets/circle_color_list.dart';
 import 'package:noota/models/note_model.dart';
 
 class AddNoteForm extends StatefulWidget {
@@ -46,8 +45,6 @@ class _MyFieldState extends State<AddNoteForm> {
                 maxlines: 5,
                 hint: 'sub title ',
               ),
-              const SizedBox(height: 10),
-            const   CircleColorList(),
               const SizedBox(height: 10),
               BlocBuilder<AddNoteCubit, AddNoteState>(
                 builder: (context, state) {
